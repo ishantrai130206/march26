@@ -523,20 +523,21 @@ video { width: 100%; display: block; }
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 18px;
-  height: 58px;
+  width: 22px;
+  height: 64px;
   background: linear-gradient(180deg, #d4a44c, #f5c96a, #b8800a, #f5c96a, #d4a44c);
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0,0,0,.3), inset 0 2px 4px rgba(255,255,255,.2);
 }
-.roller::before { left: -6px; }
-.roller::after  { right: -6px; }
+.roller::before { left: -10px; }
+.roller::after  { right: -10px; }
 
 .scroll-body {
   background-image:
     repeating-linear-gradient(0deg, transparent, transparent 29px, rgba(160,120,60,.06) 30px),
     linear-gradient(160deg, #fdf6e3 0%, #f5e6c8 30%, #f0ddb0 70%, #fdf6e3 100%);
-  margin: -6px 8px;
+  margin: -6px 6px;
+  overflow-x: hidden;
   position: relative;
   z-index: 2;
   overflow: hidden;
@@ -564,11 +565,13 @@ video { width: 100%; display: block; }
 }
 
 .letter-content {
-  padding: 14px 28px 18px;
+  padding: 14px 16px 18px;
   opacity: 0;
   transform: scaleY(.8);
   transition: opacity .8s .4s ease, transform .8s .4s ease;
   pointer-events: none;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .scroll-body.open .letter-content {
@@ -579,11 +582,13 @@ video { width: 100%; display: block; }
 
 .letter-content p {
   font-family: 'Caveat', cursive;
-  font-size: 17px;
+  font-size: clamp(14px, 3.5vw, 17px);
   color: var(--ink);
   line-height: 1.75;
   margin-bottom: 10px;
   text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .tap-hint {
@@ -873,7 +878,6 @@ video { width: 100%; display: block; }
 <section id="letterPage">
   <h2>tap the scroll to open it 💌</h2>
 
-  <div style="overflow:hidden; padding: 0 10px; text-align:center;">
   <div class="scroll-wrap" id="scrollWrap">
     <div class="roller"></div>
 
@@ -890,7 +894,6 @@ video { width: 100%; display: block; }
     <div class="roller"></div>
 
     <div class="tap-hint" id="tapHint">✦ tap to unfold ✦</div>
-  </div>
   </div>
   <!-- Spin wheel embedded below the scroll -->
   <!-- Spot the answer game -->
