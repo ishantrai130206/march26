@@ -469,11 +469,12 @@ video { width: 100%; display: block; }
   border-top: 1.5px dashed #f9b8ce;
   padding-top: 28px;
   margin-top: 10px;
+  text-align: center;
 }
 
 #page2 .next h2 { font-size: 28px; margin-bottom: 16px; }
 
-#nextBtn { background: var(--yes); color: #fff; }
+#nextBtn { background: var(--yes); color: #fff; position: static; display: inline-block; touch-action: auto; }
 
 /* ===================== PAGE 3 - SCROLL ===================== */
 #letterPage {
@@ -499,10 +500,11 @@ video { width: 100%; display: block; }
 }
 
 .scroll-wrap {
-  display: inline-block;
+  display: block;
   cursor: pointer;
   position: relative;
   width: min(380px, 90vw);
+  margin: 0 auto;
   filter: drop-shadow(0 20px 40px rgba(100,60,0,.35));
   transition: filter .3s;
   user-select: none;
@@ -856,7 +858,7 @@ video { width: 100%; display: block; }
 
 <!-- ========== PAGE 2 ========== -->
 <section id="page2">
-  <h2>YAYY 🎉😄</h2>
+  <h2>YAYY 🎉</h2>
 
   <div class="video-box">
     <video src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
@@ -864,7 +866,7 @@ video { width: 100%; display: block; }
   </div>
 
   <div class="next">
-    <h2>Ready for next? ✨</h2>
+    <h2>Ready for what's next? ✨</h2>
     <button id="nextBtn">Less go 🚀</button>
   </div>
 </section>
@@ -893,7 +895,7 @@ video { width: 100%; display: block; }
   <!-- Spin wheel embedded below the scroll -->
   <!-- Spot the answer game -->
   <div class="game-section">
-    <h3>lets play a lil game</h3>
+    <h3>enough talkkk, now a lil game</h3>
     <div class="game-subtitle">tap the right answer!</div>
     <div class="game-score" id="gameScore">Question 1 / 6</div>
     <div class="game-question" id="gameQuestion">Loading...</div>
@@ -904,7 +906,7 @@ video { width: 100%; display: block; }
   </div>
 
   <div class="wheel-section">
-    <h3>and now... spin to win!</h3>
+    <h3>lets see what ur prize is</h3>
     <div class="wheel-container">
       <div class="wheel-pointer"></div>
       <canvas id="wheelCanvas" width="280" height="280"></canvas>
@@ -915,7 +917,7 @@ video { width: 100%; display: block; }
 
   <!-- Tune section -->
   <div class="tune-section">
-    <h3>tune that reminds me of u</h3>
+    <h3>mood if u liked all this</h3>
     <button class="play-tune-btn" id="playTuneBtn">▶ play</button>
     <div class="visualizer-wrap" id="vizWrap">
       <canvas id="vizCanvas"></canvas>
@@ -924,7 +926,7 @@ video { width: 100%; display: block; }
 
   <!-- Second tune section -->
   <div class="tune-section">
-    <h3>and this one too...</h3>
+    <h3>khairr....</h3>
     <button class="play-tune-btn" id="playTuneBtn2">&#9654; play</button>
     <div class="visualizer-wrap" id="vizWrap2">
       <canvas id="vizCanvas2"></canvas>
