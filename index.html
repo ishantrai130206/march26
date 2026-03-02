@@ -266,9 +266,10 @@ function loadQuestion() {
         gameFeedback.textContent = "✗ " + q.feedback.wrong;
       }
       if (gIdx < gameQuestions.length - 1) {
-        gameNextBtn.style.display = "block";
+        // auto advance after 1.5s so user can read the feedback
+        setTimeout(() => { gIdx++; loadQuestion(); }, 1500);
       } else {
-        // last question — show scoreboard after a delay so answer is readable
+        // last question — show scoreboard after delay
         setTimeout(showFinal, 2000);
       }
     });
@@ -536,8 +537,7 @@ video { width: 100%; display: block; }
   background-image:
     repeating-linear-gradient(0deg, transparent, transparent 29px, rgba(160,120,60,.06) 30px),
     linear-gradient(160deg, #fdf6e3 0%, #f5e6c8 30%, #f0ddb0 70%, #fdf6e3 100%);
-  margin: -6px 6px;
-  overflow-x: hidden;
+  margin: -6px 8px;
   position: relative;
   z-index: 2;
   overflow: hidden;
@@ -565,13 +565,11 @@ video { width: 100%; display: block; }
 }
 
 .letter-content {
-  padding: 14px 16px 18px;
+  padding: 14px 28px 18px;
   opacity: 0;
   transform: scaleY(.8);
   transition: opacity .8s .4s ease, transform .8s .4s ease;
   pointer-events: none;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
 }
 
 .scroll-body.open .letter-content {
@@ -582,13 +580,11 @@ video { width: 100%; display: block; }
 
 .letter-content p {
   font-family: 'Caveat', cursive;
-  font-size: clamp(14px, 3.5vw, 17px);
+  font-size: 17px;
   color: var(--ink);
   line-height: 1.75;
   margin-bottom: 10px;
   text-align: left;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
 }
 
 .tap-hint {
@@ -884,9 +880,10 @@ video { width: 100%; display: block; }
     <div class="scroll-body" id="scrollBody">
       <div class="letter-content">
         <p>hey bhavya, i hope u r doing greatt.</p>
-        <p>Well I know recently i might have been disturbing u a bit with my messages and ik i might have been messaging u at the wrong time, like before or during tests, and i dont know to reverse it.</p>
-        <p>and moreover ik it sounded awkward whenever i asked, ky kr rhe ho, as i sometimes become clueless what to ask u next as it makes me feel like a creep😅, but i try my all</p>
-        <p>and moreover after talking to u till now, i believe u r a calm person with humility</p>
+        <p>Well ik i might have been messaging u at the wrong time, like before or during tests and that might have disturbed u.</p>
+        <p>ik u must have been going through a lot after all those tests and results and all</p>
+        <p>and moreover ik i made the convo awkward sometimes😅 as i become clueless, but i try my all</p>
+        <p>Anyways after talking to u till now, i believe u r a open hearted person with kindess</p>
         <p>closing on, i just wish u luck and strength for ur tests and neet, all i can say is dont take pressure. anyways, i would love to connect with u on other platforms</p>
       </div>
     </div>
@@ -904,7 +901,7 @@ video { width: 100%; display: block; }
     <div class="game-question" id="gameQuestion">Loading...</div>
     <div class="game-options" id="gameOptions"></div>
     <div class="game-feedback" id="gameFeedback"></div>
-    <button class="game-next-btn" id="gameNextBtn">next →</button>
+    <button class="game-next-btn" id="gameNextBtn" style="display:none">next →</button>
     <div class="game-final" id="gameFinal"></div>
   </div>
 
@@ -1391,7 +1388,7 @@ const gameQuestions = [
       { emoji: "🪨", label: "stone", correct: false },
       { emoji: "💎", label: "diamond", correct: false }
     ],
-    feedback: { right: "no its you :)", wrong: "no its you :)" },
+    feedback: { right: "no its you😚 :)", wrong: "no its you😚 :)" },
     trick: true
   }
 ];
@@ -1454,9 +1451,10 @@ function loadQuestion() {
         gameFeedback.textContent = "✗ " + q.feedback.wrong;
       }
       if (gIdx < gameQuestions.length - 1) {
-        gameNextBtn.style.display = "block";
+        // auto advance after 1.5s so user can read the feedback
+        setTimeout(() => { gIdx++; loadQuestion(); }, 1500);
       } else {
-        // last question — show scoreboard after a delay so answer is readable
+        // last question — show scoreboard after delay
         setTimeout(showFinal, 2000);
       }
     });
