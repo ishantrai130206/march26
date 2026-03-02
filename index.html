@@ -469,12 +469,11 @@ video { width: 100%; display: block; }
   border-top: 1.5px dashed #f9b8ce;
   padding-top: 28px;
   margin-top: 10px;
-  text-align: center;
 }
 
 #page2 .next h2 { font-size: 28px; margin-bottom: 16px; }
 
-#nextBtn { background: var(--yes); color: #fff; position: static; display: inline-block; touch-action: auto; }
+#nextBtn { background: var(--yes); color: #fff; }
 
 /* ===================== PAGE 3 - SCROLL ===================== */
 #letterPage {
@@ -500,11 +499,10 @@ video { width: 100%; display: block; }
 }
 
 .scroll-wrap {
-  display: block;
+  display: inline-block;
   cursor: pointer;
   position: relative;
   width: min(380px, 90vw);
-  margin: 0 auto;
   filter: drop-shadow(0 20px 40px rgba(100,60,0,.35));
   transition: filter .3s;
   user-select: none;
@@ -525,14 +523,14 @@ video { width: 100%; display: block; }
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 22px;
-  height: 64px;
+  width: 18px;
+  height: 58px;
   background: linear-gradient(180deg, #d4a44c, #f5c96a, #b8800a, #f5c96a, #d4a44c);
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0,0,0,.3), inset 0 2px 4px rgba(255,255,255,.2);
 }
-.roller::before { left: -10px; }
-.roller::after  { right: -10px; }
+.roller::before { left: -6px; }
+.roller::after  { right: -6px; }
 
 .scroll-body {
   background-image:
@@ -858,7 +856,7 @@ video { width: 100%; display: block; }
 
 <!-- ========== PAGE 2 ========== -->
 <section id="page2">
-  <h2>YAYY 🎉</h2>
+  <h2>YAYY 🎉😄</h2>
 
   <div class="video-box">
     <video src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
@@ -866,7 +864,7 @@ video { width: 100%; display: block; }
   </div>
 
   <div class="next">
-    <h2>Ready for what's next? ✨</h2>
+    <h2>Ready for next? ✨</h2>
     <button id="nextBtn">Less go 🚀</button>
   </div>
 </section>
@@ -875,6 +873,7 @@ video { width: 100%; display: block; }
 <section id="letterPage">
   <h2>tap the scroll to open it 💌</h2>
 
+  <div style="overflow:hidden; padding: 0 10px; text-align:center;">
   <div class="scroll-wrap" id="scrollWrap">
     <div class="roller"></div>
 
@@ -891,6 +890,7 @@ video { width: 100%; display: block; }
     <div class="roller"></div>
 
     <div class="tap-hint" id="tapHint">✦ tap to unfold ✦</div>
+  </div>
   </div>
   <!-- Spin wheel embedded below the scroll -->
   <!-- Spot the answer game -->
